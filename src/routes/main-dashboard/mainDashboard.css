@@ -1,0 +1,110 @@
+.mainDashboard {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.mainDashboard .header {
+    margin: 25px;
+    font-size: 20px;
+}
+
+.sections {
+    display: grid;
+    grid-gap: 10px;
+    margin: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+}
+
+.buttons {
+    display: grid;
+    grid-gap: 10px;
+    margin: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 5px -3px #000000;
+}
+
+.card-content {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.card-year {
+    right: 10px;
+    position: absolute;
+}
+
+.budget-status .bar-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.budget-status .amount {
+    right: 20%;
+    position: absolute;
+}
+
+.budget-status a {
+    color: var(--primary-font);
+}
+
+.months-stat {
+    display: flex;
+}
+
+.micro-charts {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.micro-charts h3 {
+    color: #000000;
+    margin: 10px 0 10px 0;
+}
+
+.current-month {
+    border-radius: 10px;
+    border: 2px solid var(--primary-font);
+    padding: 0 10px;
+}
+
+.red {
+    color: #e24949;
+    border-color: #e24949;
+}
+
+.green {
+    color: #11bb8d;
+    border-color: #11bb8d;
+}
+
+.yellow {
+    color: #ffc043;
+    border-color: #ffc043;
+}
+
+/* ! Hover Effects */
+.buttons button {
+    transition: var(--hover-transition);
+}
+@media (hover: hover) {
+    .buttons button:hover {
+        transition: var(--hover-transition);
+        background-color: var(--primary-font);
+        color: var(--secondary-bg);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .sections {
+        grid-template-columns: 1fr;
+    }
+}

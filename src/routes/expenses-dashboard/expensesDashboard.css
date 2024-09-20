@@ -1,0 +1,566 @@
+.expenses-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    position: relative;
+}
+
+.expenses-dashboard article {
+    padding: 2rem;
+}
+
+.expenses-action-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.no-records-found {
+    font-size: 1.5rem;
+    padding: 2rem;
+}
+
+.tables {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.expenses-action-btns button {
+    color: var(--primary-font);
+    background-color: var(--secondary-bg);
+}
+
+.expenses-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.expenses-tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.expenses-tabs button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 300;
+    position: relative;
+}
+
+.active-tab::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 200%;
+    top: 150%;
+    left: -50%;
+    height: 2px;
+    background-color: var(--primary-font);
+}
+
+.expense-amount {
+    color: red;
+}
+
+.income-amount {
+    color: green;
+}
+
+/* ! Expenses Table  */
+
+table.greyGridTable {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+table.greyGridTable span {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+table.greyGridTable span img {
+    width: 4rem;
+}
+
+table.greyGridTable td:last-child {
+    font-weight: 800;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+table.greyGridTable td,
+table.greyGridTable th {
+    padding: 1rem;
+    border-bottom: 1px solid black;
+}
+
+table.greyGridTable thead th {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 2rem;
+}
+
+/* ! Expenses Pagination */
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 600;
+    align-items: center;
+}
+
+.pagination li {
+    cursor: pointer;
+}
+
+.pagination li.selected {
+    color: var(--primary-font);
+}
+
+/* ! Add Expense Modal */
+
+.add-expense-modal::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.add-expense-modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-left: -15px;
+    z-index: 1000;
+}
+
+.add-expense-popup {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    height: max-content;
+    max-height: 100%;
+    border-radius: 10px;
+    width: 600px;
+    max-width: 100%;
+    align-items: center;
+    background-color: var(--primary-bg);
+    margin-left: -250px;
+    overflow: auto;
+    gap: 2rem;
+}
+
+.add-expense-popup::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.add-expense-popup h2 {
+    font-weight: 400;
+}
+
+.add-expense-popup form,
+.add-existing-popup form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: max-content;
+    width: 80%;
+    gap: 2rem;
+}
+
+.add-expense-popup input,
+.add-expense-popup textarea,
+.add-existing-popup input,
+.add-existing-popup textarea {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--secondary-bg);
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+    width: 80%;
+}
+
+.add-expense-popup input::placeholder,
+.add-expense-popup textarea::placeholder {
+    color: var(--primary-black);
+    font-family: var(--manrope-font);
+}
+
+.add-expense-popup form select,
+.add-existing-popup form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: var(--secondary-bg);
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+    width: 80%;
+}
+
+.add-expense-popup form select::-ms-expand {
+    display: none;
+}
+
+.add-expense-popup form button {
+    color: var(--primary-font);
+    background-color: var(--primary-bg);
+    width: 80%;
+}
+
+/* ! Add Income Modal */
+
+.add-income-modal::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.add-income-modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-left: -15px;
+    z-index: 1000;
+}
+
+.add-income-popup {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    height: max-content;
+    max-height: 100%;
+    border-radius: 10px;
+    width: 600px;
+    max-width: 100%;
+    align-items: center;
+    background-color: var(--primary-bg);
+    margin-left: -250px;
+    overflow: auto;
+    gap: 2rem;
+}
+
+.add-income-popup::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.add-income-popup h2 {
+    font-weight: 400;
+}
+
+.add-income-popup form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: max-content;
+    width: 80%;
+    gap: 2rem;
+}
+
+.add-income-popup input,
+.add-income-popup textarea {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--secondary-bg);
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+    width: 80%;
+}
+
+.add-income-popup input::placeholder,
+.add-income-popup textarea::placeholder {
+    color: var(--primary-black);
+    font-family: ar(--manrope-font);
+}
+
+.add-income-popup form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: var(--secondary-bg);
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem 0.5rem;
+    width: 80%;
+}
+
+.add-income-popup form select::-ms-expand {
+    display: none;
+}
+
+.add-income-popup form button {
+    color: var(--primary-font);
+    background-color: var(--primary-bg);
+    width: 80%;
+}
+
+/* ! Add Income Modal */
+
+.add-existing-modal::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.add-existing-modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-left: -15px;
+    z-index: 1000;
+}
+
+.add-existing-popup {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 2rem;
+    height: max-content;
+    max-height: 100%;
+    border-radius: 10px;
+    width: 30rem;
+    max-width: 100%;
+    background-color: var(--primary-bg);
+    margin-left: -250px;
+    overflow: auto;
+}
+
+.add-existing-popup::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.add-existing-popup h2 {
+    font-weight: 400;
+}
+
+.recording-data {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    word-spacing: 2px;
+}
+
+.recording-data span {
+    font-weight: 300;
+}
+
+.existing-record-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.existing-record-buttons button {
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    color: var(--primary-font);
+    border: 1px solid var(--primary-font);
+    background-color: var(--primary-bg);
+    cursor: pointer;
+    width: max-content;
+}
+
+/* close modal button*/
+.close-modal {
+    position: absolute;
+    font-size: 1.5rem;
+    right: 5%;
+    top: 3%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* ! Transitions */
+.expenses-action-btns button,
+.existing-record-buttons button,
+.pagination li,
+.pagination .next,
+.pagination .previous,
+.add-income-popup form button,
+.add-expense-popup form button {
+    transition: var(--hover-transition);
+}
+
+@media (hover: hover) {
+    .expenses-action-btns button:hover,
+    .existing-record-buttons button:hover,
+    .pagination li:hover,
+    .pagination .next:hover,
+    .pagination .previous:hover,
+    .add-income-popup form button:hover,
+    .add-expense-popup form button:hover {
+        transition: var(--hover-transition);
+    }
+
+    .expenses-action-btns button:hover {
+        background-color: var(--primary-font);
+        color: var(--secondary-bg);
+    }
+
+    .existing-record-buttons button:hover {
+        color: var(--primary-bg);
+        background-color: var(--primary-font);
+    }
+
+    .pagination li:hover,
+    .pagination .next:hover,
+    .pagination .previous:hover {
+        color: var(--primary-font);
+    }
+    .add-income-popup form button:hover,
+    .add-expense-popup form button:hover {
+        background-color: var(--primary-font);
+        color: var(--secondary-bg);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .expenses-dashboard article {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .greyGridTable {
+        border: 0;
+    }
+
+    .greyGridTable caption {
+        font-size: 1.3em;
+    }
+
+    .greyGridTable thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .greyGridTable tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: 0.625em;
+    }
+
+    .greyGridTable td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+    }
+
+    table.greyGridTable td:first-child {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    table.greyGridTable td span {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    table.greyGridTable td:last-child {
+        font-size: 0.8em;
+    }
+
+    .greyGridTable td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .add-expense-popup,
+    .add-income-popup {
+        width: 400px;
+    }
+    .add-expense-popup form,
+    .add-income-popup form {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .add-expense-popup,
+    .add-income-popup,
+    .add-existing-popup {
+        margin-left: 0;
+    }
+
+    .expenses-action-btns {
+        justify-content: space-between;
+    }
+
+    .expenses-action-btns button {
+        width: 100%;
+    }
+    .add-expense-popup,
+    .add-income-popup {
+        width: 500px;
+    }
+    .add-expense-popup form,
+    .add-income-popup form {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .active-tab::after {
+        width: 100%;
+        left: 0;
+    }
+    .add-expense-popup,
+    .add-income-popup {
+        width: 380px;
+    }
+    .add-expense-popup form,
+    .add-income-popup form {
+        width: 90%;
+    }
+}
